@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="这是一个接口测试套件">
+    <test name="这是一个测试模块">
+        <classes>
+            <class name="com.course.httpclient.cookies.MyCookiesForPost">
+                <methods>
+                    <include name = "testGetCookies"/>
+                    <include name = "testPostMethod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.course.httpclient.testReportConfig.ExtentTestReportListtenerOld"/>
+<!--        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>-->
+    </listeners>
+</suite>

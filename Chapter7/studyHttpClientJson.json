@@ -1,0 +1,96 @@
+[
+  {
+    "description": "带cookies的get请求",
+    "request": {
+      "uri": "/getCookiesDemo1",
+      "method": "get"
+    },
+    "response": {
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      },
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "Ansen1",
+        "age": "18"
+      }
+    }
+  },
+  {
+    "description": "带cookies的get请求",
+    "request": {
+      "uri": "/get/with/cookies",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      },
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "Ansen1",
+        "age": "18"
+      }
+    }
+  },
+  {
+    "description": "带cookies的post请求",
+    "request": {
+      "uri": "/getCookiesDemo2",
+      "method": "post",
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response": {
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      },
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "Ansen2",
+        "age": "18"
+      }
+    }
+  },
+  {
+    "description": "post请求json格式",
+    "request": {
+      "uri": "/post/json/demo",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "Ansen",
+        "age": "18"
+      },
+      "headers": {
+        "Content-Type": "Application/json;charset=gbk"
+      }
+    },
+    "response": {
+      "headers": {
+        "Content-Type": "Application/json;charset=gbk"
+      },
+      "cookies": {
+        "login": "true"
+      },
+      "status": 200,
+      "json": {
+        "name": "Ansen1",
+        "age": "18",
+        "success": "true"
+      }
+    }
+  }
+]

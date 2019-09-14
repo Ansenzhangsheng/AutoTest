@@ -1,0 +1,52 @@
+[
+  {
+    "description": "这是我们的第一个mock例子",
+    "request": {
+      "uri": "/demo",
+      "method": "get"
+    },
+    "response": {
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      },
+      "text":"Ansen今年25了"
+    }
+  },
+  {
+    "description": "post请求demo2",
+    "request": {
+      "uri": "/demo2",
+      "method": "post",
+      "forms": {
+        "name": "Ansen",
+        "age": "25"
+      }
+    },
+    "response": {
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      },
+      "text":"这是一个post请求"
+    }
+  },
+  {
+    "description": "get请求+cookies",
+    "request": {
+      "uri": "/demo3",
+      "method": "get",
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response": {
+      "headers": {
+        "Content-Type":"text/html;charset=gbk"
+      },
+      "json": {
+        "name": "Ansen",
+        "age": "3 "
+      }
+    }
+  }
+
+]
