@@ -1,13 +1,12 @@
 package com.course.server;
 
+import com.course.bean.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.net.http.HttpResponse;
 
@@ -32,4 +31,27 @@ public class MyPostMethod {
         return "用户名或密码错误";
     }
 
+    /**
+     *
+     */
+    @RequestMapping(value = "/getUserList",method = RequestMethod.POST)
+    @ApiOperation(value = "获取用户列表",httpMethod = "POST")
+    public String getUserList(HttpServletRequest request,
+                            @RequestBody User u){
+        //获取cookie
+        Cookie[] cookies = request.getCookies();
+        User user = new User();
+        user.setName("Ansen1");
+        user.setAge("12");
+        user.setSex("man");
+        //验证cookies是否合法
+        for (Cookie c:cookies){
+            if(c.getName().equals("login")&&c.getValue().equals("true")
+                    &&u.getUsername().equals("Ansen")&&u.getPassword().equals("123456")){
+
+                return user.toString();
+            }
+        }
+        return "参数不合法";
+    }
 }
